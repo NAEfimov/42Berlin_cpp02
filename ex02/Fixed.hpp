@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:31:17 by nefimov           #+#    #+#             */
-/*   Updated: 2025/10/23 21:07:40 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/10/24 11:36:31 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ public:
 	~Fixed(void);
 	Fixed &operator=(const Fixed &other);
 	// TODO
-	Fixed &operator>(const Fixed &other);
-	Fixed &operator<(const Fixed &other);
-	Fixed &operator>=(const Fixed &other);
-	Fixed &operator<=(const Fixed &other);
-	Fixed &operator==(const Fixed &other);
-	Fixed &operator!=(const Fixed &other);
+	bool operator>(const Fixed &other) const;
+	bool operator<(const Fixed &other);
+	bool operator>=(const Fixed &other);
+	bool operator<=(const Fixed &other);
+	bool operator==(const Fixed &other);
+	bool operator!=(const Fixed &other);
 
 	Fixed &operator+(const Fixed &other);
 	Fixed &operator-(const Fixed &other);

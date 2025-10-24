@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:31:19 by nefimov           #+#    #+#             */
-/*   Updated: 2025/10/23 20:26:51 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/10/24 11:39:15 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,51 @@ Fixed &Fixed::operator=(const Fixed &other) {
 	return (*this);
 }
 
+bool Fixed::operator>(const Fixed &other) const {
+	return (this->value > other.value);
+};
+bool Fixed::operator<(const Fixed &other) {
+	return (this->value < other.value);
+};
+bool Fixed::operator>=(const Fixed &other) {
+	return (this->value >= other.value);
+};
+bool Fixed::operator<=(const Fixed &other) {
+	return (this->value <= other.value);
+};
+bool Fixed::operator==(const Fixed &other) {
+	return (this->value == other.value);
+};
+bool Fixed::operator!=(const Fixed &other) {
+	return (this->value != other.value);
+};
+/*
+Fixed &Fixed::operator+(const Fixed &other) {
+	
+};
+Fixed &Fixed::operator-(const Fixed &other) {
+	
+};
+Fixed &Fixed::operator*(const Fixed &other) {
+	
+};
+Fixed &Fixed::operator/(const Fixed &other) {
+	
+};
+
+Fixed &Fixed::operator++(void) {
+	
+};
+Fixed Fixed::operator++(int) {
+	
+};
+Fixed &Fixed::operator--(void) {
+	
+};
+Fixed Fixed::operator--(int) {
+	
+};
+*/
 Fixed::~Fixed(void) {
 	std::cout << "Destructor called\n";
 }
