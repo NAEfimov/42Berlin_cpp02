@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:31:17 by nefimov           #+#    #+#             */
-/*   Updated: 2025/10/24 11:36:31 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/10/24 12:49:24 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ public:
 	Fixed &operator=(const Fixed &other);
 	// TODO
 	bool operator>(const Fixed &other) const;
-	bool operator<(const Fixed &other);
-	bool operator>=(const Fixed &other);
-	bool operator<=(const Fixed &other);
-	bool operator==(const Fixed &other);
-	bool operator!=(const Fixed &other);
+	bool operator<(const Fixed &other) const;
+	bool operator>=(const Fixed &other) const;
+	bool operator<=(const Fixed &other) const;
+	bool operator==(const Fixed &other) const;
+	bool operator!=(const Fixed &other) const;
 
-	Fixed &operator+(const Fixed &other);
-	Fixed &operator-(const Fixed &other);
-	Fixed &operator*(const Fixed &other);
-	Fixed &operator/(const Fixed &other);
+	Fixed operator+(const Fixed &other) const;
+	Fixed operator-(const Fixed &other) const;
+	Fixed operator*(const Fixed &other) const;
+	Fixed operator/(const Fixed &other) const;
 
 	Fixed &operator++(void);
 	Fixed operator++(int);
@@ -46,10 +46,10 @@ public:
 	float	toFloat(void) const;
 	int		toInt(void) const;
 	// TODO
-	Fixed	&min(Fixed &num1, Fixed &num2);
-	Fixed	&min(const Fixed &num1, const Fixed &num2);
-	Fixed	&max(Fixed &num1, Fixed &num2);
-	Fixed	&max(const Fixed &num1, const Fixed &num2);
+	static Fixed &min(Fixed &num1, Fixed &num2);
+	static Fixed &max(Fixed &num1, Fixed &num2);
+	static const Fixed &min(const Fixed &num1, const Fixed &num2);
+	static const Fixed &max(const Fixed &num1, const Fixed &num2);
 	// END TODO
 
 	
