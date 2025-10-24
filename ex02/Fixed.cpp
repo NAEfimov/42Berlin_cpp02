@@ -6,14 +6,14 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:31:19 by nefimov           #+#    #+#             */
-/*   Updated: 2025/10/24 12:49:58 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/10/24 15:10:01 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+// #include <iomanip>
 #include <cmath>
-#include <cstdint>
 
 Fixed::Fixed(void) : value(0) {
 	std::cout << "Default Constructor called" << std::endl;
@@ -74,12 +74,14 @@ Fixed Fixed::operator-(const Fixed &other) const {
 };
 Fixed Fixed::operator*(const Fixed &other) const {
 	Fixed result;
-	result.value = static_cast<int64_t>(this->value) * other.value >> fract_bits;
+	// result.value = (this->value * other.value) >> fract_bits;
+	result.value = static_cast<long long>(this->value) * other.value >> fract_bits;
     return result;
 };
 Fixed Fixed::operator/(const Fixed &other) const {
 	Fixed result;
-    result.value = (static_cast<int64_t>(this->value) << fract_bits) / other.value;
+    // result.value = (this->value << fract_bits) / other.value;
+    result.value = (static_cast<long long>(this->value) << fract_bits) / other.value;
     return result;
 };
 
@@ -88,7 +90,7 @@ Fixed &Fixed::operator++(void) {
 	return (*this);
 };
 Fixed Fixed::operator++(int) {
-	Fixed result(this->value);
+	Fixed result = *this;
 	this->value += 1;
 	return (result);
 };
@@ -152,5 +154,6 @@ const Fixed &Fixed::max(const Fixed &num1, const Fixed &num2) {
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
 	out << fixed.toFloat();
+	// out << std::fixed << std::setprecision(2) << fixed.toFloat();
 	return (out);
 }
