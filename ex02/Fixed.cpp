@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:31:19 by nefimov           #+#    #+#             */
-/*   Updated: 2025/10/24 15:28:01 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/10/27 13:00:43 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,13 @@ bool Fixed::operator!=(const Fixed &other) const {
 // Arithmetic operators
 Fixed Fixed::operator+(const Fixed &other) const {
 	Fixed result;
-	result = this->value + other.value;
+	result.value = this->value + other.value;
 	return (result);
 };
 
 Fixed Fixed::operator-(const Fixed &other) const {
 	Fixed result;
-	result = this->value - other.value;
+	result.value = this->value - other.value;
 	return (result);
 };
 
