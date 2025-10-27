@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:31:23 by nefimov           #+#    #+#             */
-/*   Updated: 2025/10/27 14:20:58 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/10/27 14:41:55 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(void) {
 	Point b(0.f, 5.f);
 	Point c(5.f, 0.f);
 	Point point;
-	
+
 	std::cout << "triangle: " << a << " " << b << " " << c << std::endl;
 
 	// Positive tests
@@ -29,16 +29,12 @@ int main(void) {
 	
 	point.setXY(Fixed(1.f), Fixed(1.f));
 	std::cout << point << ": " << bsp(a, b, c, point) << std::endl;
-	
 	point.setXY(Fixed(0), Fixed(0));
 	std::cout << point << ": " << bsp(a, b, c, point) << std::endl;
-	
 	point.setXY(Fixed(0), Fixed(4));
 	std::cout << point << ": " << bsp(a, b, c, point) << std::endl;
-	
 	point.setXY(Fixed(-0.5f), Fixed(-0.5f));
 	std::cout << point << ": " << bsp(a, b, c, point) << std::endl;
-	
 	point.setXY(Fixed(3), Fixed(1.99f));
 	std::cout << point << ": " << bsp(a, b, c, point) << std::endl;
 
@@ -47,13 +43,10 @@ int main(void) {
 	
 	point.setXY(Fixed(3), Fixed(2));
 	std::cout << point << ": " << bsp(a, b, c, point) << std::endl;
-	
 	point.setXY(Fixed(-1.2f), Fixed(2.f));
 	std::cout << point << ": " << bsp(a, b, c, point) << std::endl;
-	
 	point.setXY(Fixed(3.1f), Fixed(3.5f));
 	std::cout << point << ": " << bsp(a, b, c, point) << std::endl;
-	
 	point.setXY(Fixed(3.f), Fixed(-0.5f));
 	std::cout << point << ": " << bsp(a, b, c, point) << std::endl;
 	

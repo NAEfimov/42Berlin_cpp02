@@ -6,12 +6,13 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 11:23:37 by nefimov           #+#    #+#             */
-/*   Updated: 2025/10/27 13:36:18 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/10/27 14:45:09 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
+// Constructors and Destructor
 Point::Point(void) : x(0), y(0) {}
 
 Point::Point(const float fx, const float fy) : x(fx), y(fy) {}
@@ -25,12 +26,14 @@ Point::Point(Point &other) {
 
 Point::~Point(void) {}
 
+// Operators
 Point &Point::operator=(Point &other) {
 	this->x = other.x;
 	this->y = other.y;
 	return (*this);
 }
 
+// Getters and Setters
 Fixed Point::getX(void) const {
 	return (this->x);
 }
@@ -52,6 +55,7 @@ void Point::setXY(const Fixed &fx, const Fixed &fy) {
 	y = fy;
 }
 
+// Stream operator
 std::ostream &operator<<(std::ostream &out, const Point &point) {
 	out << "(" << point.getX() << ", " << point.getY() << ")";
 	return (out);
