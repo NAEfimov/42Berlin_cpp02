@@ -6,13 +6,12 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:31:19 by nefimov           #+#    #+#             */
-/*   Updated: 2025/10/27 13:00:43 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/12/11 16:51:58 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
-// #include <iomanip>
 #include <cmath>
 
 // Constructors
@@ -87,14 +86,12 @@ Fixed Fixed::operator-(const Fixed &other) const {
 
 Fixed Fixed::operator*(const Fixed &other) const {
 	Fixed result;
-	// result.value = (this->value * other.value) >> fract_bits;
 	result.value = static_cast<long long>(this->value) * other.value >> fract_bits;
     return result;
 };
 
 Fixed Fixed::operator/(const Fixed &other) const {
 	Fixed result;
-    // result.value = (this->value << fract_bits) / other.value;
     result.value = (static_cast<long long>(this->value) << fract_bits) / other.value;
     return result;
 };
@@ -160,6 +157,5 @@ const Fixed &Fixed::max(const Fixed &num1, const Fixed &num2) {
 // Stream operator (non-member function)
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
 	out << fixed.toFloat();
-	// out << std::fixed << std::setprecision(2) << fixed.toFloat();
 	return (out);
 }

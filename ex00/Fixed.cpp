@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:31:19 by nefimov           #+#    #+#             */
-/*   Updated: 2025/10/23 17:10:50 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/12/11 16:53:55 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ Fixed::Fixed(void) : value(0) {
 
 Fixed::Fixed(const Fixed &other) {
 	std::cout << "Copy Constructor called" << std::endl;
-	// this->value = other.getRawBits();
 	*this = other;
 }
 

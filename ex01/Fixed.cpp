@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:31:19 by nefimov           #+#    #+#             */
-/*   Updated: 2025/10/23 20:26:51 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/12/11 16:53:31 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ Fixed::Fixed(const float f_num) : value(static_cast<int>(roundf(f_num * (1 << fr
 
 Fixed::Fixed(const Fixed &other) {
 	std::cout << "Copy Constructor called" << std::endl;
-	// this->value = other.getRawBits();
 	*this = other;
 }
 
