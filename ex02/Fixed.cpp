@@ -6,7 +6,7 @@
 /*   By: nefimov <nefimov@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:31:19 by nefimov           #+#    #+#             */
-/*   Updated: 2025/12/11 16:51:58 by nefimov          ###   ########.fr       */
+/*   Updated: 2025/12/12 17:30:32 by nefimov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,15 @@ Fixed Fixed::operator-(const Fixed &other) const {
 
 Fixed Fixed::operator*(const Fixed &other) const {
 	Fixed result;
-	result.value = static_cast<long long>(this->value) * other.value >> fract_bits;
+	result.value = static_cast<long long>(this->value) * other.value
+				   >> fract_bits;
     return result;
 };
 
 Fixed Fixed::operator/(const Fixed &other) const {
 	Fixed result;
-    result.value = (static_cast<long long>(this->value) << fract_bits) / other.value;
+    result.value = (static_cast<long long>(this->value) << fract_bits)
+					/ other.value;
     return result;
 };
 
